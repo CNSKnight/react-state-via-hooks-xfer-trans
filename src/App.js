@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import XferForm from './transfer/XferForm';
+import TransHistory from './transactionsHistory/TransHistory';
 
-function App() {
+const logo = './assets/logo.jpg';
+
+const App = props => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <div className="container">
+          <i className="icon"></i>
+          <img className="appLogo" src={logo} alt="Peachtree Bank" />
+        </div>
       </header>
+      <main>
+        <div className="container">
+          <XferForm />
+          <TransHistory />
+        </div>
+      </main>
     </div>
   );
-}
+};
 
 export default App;
