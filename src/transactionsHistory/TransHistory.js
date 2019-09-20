@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import transHistoryStore from './transHistoryStore';
 import dateFormat from 'dateformat';
 
@@ -38,8 +38,11 @@ const TransItem = ({ item, idx }) => {
     );
 }
 
-const TransHistory = () => {
+const TransHistory = ({ toDispatch }) => {
     const [{ transactions }, dispatch] = transHistoryStore();
+    useEffect(() => {
+        toDispatch && dispatch(toDispatch);
+    }, [toDispatch, dispatch])
     let transItems;
     if (!transactions.length) {
         transItems = <li>No Transactions to Display</li>;
@@ -49,7 +52,7 @@ const TransHistory = () => {
                 item={item}
                 idx={idx.toString()}
                 key={idx.toString()}
-                onTransactionsSelect={dispatch.bind('TRANS_SELECT', idx)}
+                onTransItemClick={dispatch.bind({ type: 'TRANS_SELECT', data: idx })}
             />
         );
     }

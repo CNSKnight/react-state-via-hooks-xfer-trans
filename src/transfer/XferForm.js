@@ -13,7 +13,7 @@ const FieldGroup = ({ id, label, ...props }) => {
 
 const Prompt = (props) => props.phase === 'submit' ? <div className="previewPrompt">PREVIEW</div> : null;
 
-const XferForm = () => {
+const XferForm = ({ setToDispatch }) => {
   const [{ data, phase }, dispatch] = xferQueueStore();
   const canSubmit = !!(data.toAcct && data.amount);
   return (
@@ -42,7 +42,7 @@ const XferForm = () => {
             name="toAcct"
             onChange={e => {
               e.preventDefault()
-              dispatch('XFER_QUEUE', { name: 'toAcct', value: e.target.value })
+              dispatch({ type: 'XFER_QUEUE', data: { name: 'toAcct', value: e.target.value } })
             }}
           />
           <FieldGroup
@@ -60,7 +60,7 @@ const XferForm = () => {
                 const dp = e.target.value.split('').reverse().indexOf('.');
                 // constrain the precision
                 if (dp < 3) {
-                  dispatch('XFER_QUEUE', { name: 'amount', value: e.target.value });
+                  dispatch({ type: 'XFER_QUEUE', data: { name: 'amount', value: e.target.value } });
                 }
               }
             }}
@@ -70,10 +70,10 @@ const XferForm = () => {
               onClick={e => {
                 e.preventDefault();
                 if (phase === 'submit') {
-                  dispatch('XFER_SUBMIT');
+                  dispatch({ type: 'XFER_SUBMIT' });
                 } else {
-                  dispatch('TRANS_ADD', { toAcct: data.toAcct, amount: data.amount });
-                  dispatch('XFER_XFER');
+                  dispatch({ type: 'XFER_XFER' });
+                  setToDispatch({ type: 'TRANS_ADD', data: { toAcct: data.toAcct, amount: data.amount } });
                 }
               }}>{phase === 'submit' ? 'TRANSFER' : 'SUBMIT'}</button>
           </div>

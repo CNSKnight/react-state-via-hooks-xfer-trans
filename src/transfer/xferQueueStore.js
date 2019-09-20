@@ -12,8 +12,6 @@ const user = {
 const queueInit = () => ({ data: { ...user }, phase: null });
 
 // Transfer Form Reducer
-// - could also have been component-specific local state
-// - but then we're getting persistent form state accross reloads
 const xferQueueReducer = (state, action) => {
     let queue;
     switch (action.type) {

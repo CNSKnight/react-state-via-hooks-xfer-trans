@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import XferForm from './transfer/XferForm';
 import TransHistory from './transactionsHistory/TransHistory';
 
 const logo = './assets/logo.jpg';
 
 const App = props => {
+  const [toDispatch, setToDispatch] = useState({});
   return (
     <div className="App">
       <header>
@@ -15,8 +16,8 @@ const App = props => {
       </header>
       <main>
         <div className="container">
-          <XferForm />
-          <TransHistory />
+          <XferForm setToDispatch={setToDispatch} />
+          <TransHistory toDispatch={toDispatch} />
         </div>
       </main>
     </div>
