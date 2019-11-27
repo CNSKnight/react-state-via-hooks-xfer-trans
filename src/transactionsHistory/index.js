@@ -1,1 +1,2 @@
-export default './transactions';
+export { default as TransHistory } from "./TransHistory";
+export * from "./transHistoryStore";

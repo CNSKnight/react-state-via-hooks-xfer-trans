@@ -7,10 +7,10 @@
     "react-app",
     "plugin:flowtype/recommended",
     "plugin:prettier/recommended",
+    "prettier/standard",
     "prettier/babel",
-    "prettier/flowtype",
     "prettier/react",
-    "prettier/standard"
+    "prettier/flowtype"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -23,13 +23,19 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["flowtype", "prettier"],
+  "plugins": [
+    "react-hooks",
+    "flowtype",
+    "prettier"
+  ],
   "settings": {
     "flowtype": {
       "onlyFilesWithFlowAnnotation": false
     }
   },
   "rules": {
-    "flowtype/no-types-missing-file-annotation": 0
+    "flowtype/no-types-missing-file-annotation": 0,
+    "react-hooks/rules-of-hooks": "warn", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
   }
 }

@@ -2,7 +2,6 @@
 <PROJECT_ROOT>/node_modules/.*
 <PROJECT_ROOT>/build/.*
 <PROJECT_ROOT>/\.vscode/.+\.json
-.*/\..+/?
 <PROJECT_ROOT>/\..+\.json
 
 [libs]

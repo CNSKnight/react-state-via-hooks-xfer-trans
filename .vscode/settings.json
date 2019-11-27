@@ -1,0 +1,15 @@
+{
+    "flow.useNPMPackagedFlow": true,
+    "editor.defaultFormatter": "flowtype.flow-for-vscode",
+    "editor.formatOnSave": true,
+    "prettier.parser": "flow",
+    "flow.fileExtensions": [
+        ".js",
+        ".mjs",
+        ".jsx",
+        ".flow"
+    ],
+    "flow.runOnAllFiles": true,
+    "flow.useBundledFlow": false,
+    "flow.useLSP": false
+}

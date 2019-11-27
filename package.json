@@ -4,17 +4,17 @@
   "private": true,
   "dependencies": {
     "lodash": "^4.17.15",
-    "node-sass": "^4.12.0",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-scripts": "3.1.1"
+    "node-sass": "^4.13.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint-check": "eslint --print-config src/transactionsHistory/transHistoryStore.js | eslint-config-prettier-check",
+    "eslint-check": "eslint --print-config src/transfer/XferForm.js | eslint-config-prettier-check",
     "flow": "flow"
   },
   "browserslist": {
@@ -31,7 +31,8 @@
   },
   "devDependencies": {
     "dateformat": "^3.0.3",
-    "flow-bin": "^0.108.0",
-    "prettier": "1.18.2"
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "flow-bin": "0.112.0",
+    "prettier": "^1.19.1"
   }
 }

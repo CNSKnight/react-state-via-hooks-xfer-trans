@@ -2,179 +2,273 @@ body {
   margin: 0;
   padding: 0;
   color: #373737;
-  background-color: #FFF; }
+  background-color: #FFF;
+}
 
 body,
-input,
-button {
-  font-family: 'Kanit', Arial, sans-serif; }
+button,
+input {
+  font-family: 'Kanit', Arial, sans-serif;
+}
 
 .container {
   width: 80%;
-  margin: auto; }
+  margin: auto;
+}
 
 header {
-  border-bottom: 4px solid #ff844b; }
-  header .appLogo {
-    height: 50px;
-    padding: 1em 0; }
+  border-bottom: 4px solid #ff844b;
+}
+
+header .appLogo {
+  height: 50px;
+  padding: 1em 0;
+}
 
 main {
-  background-image: url(./assets/background.jpg);
+  background-image: url("./assets/background.jpg");
   background-clip: contain;
   background-repeat: no-repeat;
-  background-color: #FFF; }
-  main .container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-around; }
-  main .card {
-    flex: 0 1 auto;
-    min-width: 40%;
-    margin-top: 4em;
-    background-color: #FFF;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 4px -2px rgba(0, 0, 0, 0.2); }
-    main .card .card-header {
-      position: relative;
-      background-color: #0c8397;
-      color: #FFF;
-      height: 80px;
-      font-size: larger;
-      text-align: center;
-      line-height: 80px; }
-      main .card .card-header .icon {
-        position: absolute;
-        height: 24px;
-        width: 28px;
-        color: #add5dc;
-        top: 50%;
-        left: 1em;
-        transform: translateY(-50%);
-        /* note the comps have no transparency */ }
-        main .card .card-header .icon.arrows {
-          background-image: url(./assets/icons/arrows.png); }
-        main .card .card-header .icon.briefcase {
-          background-image: url(./assets/icons/briefcase.png); }
-    main .card .card-content {
-      padding: 1.5em 1em; }
-    main .card.xfer .card-content {
-      position: relative; }
-      main .card.xfer .card-content.submit {
-        background-color: gainsboro; }
-        main .card.xfer .card-content.submit input,
-        main .card.xfer .card-content.submit button {
-          color: purple; }
-      main .card.xfer .card-content .previewPrompt {
-        position: absolute;
-        color: white;
-        top: .5em;
-        text-align: center;
-        left: 50%;
-        transform: translateX(-50%);
-        font-weight: bold;
-        letter-spacing: 2px; }
-    main .card.xfer .pbInputBloc {
-      position: relative;
-      margin-top: 1rem;
-      color: #7b7772; }
-      main .card.xfer .pbInputBloc label {
-        display: block;
-        font-weight: bold;
-        color: #373737; }
-      main .card.xfer .pbInputBloc.prefix:after {
-        position: absolute;
-        content: '$';
-        top: 2.2em; }
-      main .card.xfer .pbInputBloc input {
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px solid #bfbfbf;
-        border-radius: 0;
-        outline: none;
-        height: 3rem;
-        width: 100%;
-        font-size: 16px;
-        margin: 0 0 20px 0;
-        padding: 0;
-        box-shadow: none;
-        box-sizing: content-box;
-        display: block;
-        color: #7b7772; }
-        main .card.xfer .pbInputBloc input[name="amount"] {
-          padding-left: 1em; }
-        main .card.xfer .pbInputBloc input:disabled {
-          color: #7b7772; }
-    main .card.xfer .actions {
-      text-align: center; }
-      main .card.xfer .actions .btn {
-        border: none;
-        border-radius: 2px;
-        display: inline-block;
-        font-size: 12px;
-        font-weight: bold;
-        height: 50px;
-        line-height: 50px;
-        padding: 0 2rem;
-        text-transform: uppercase;
-        vertical-align: middle;
-        -webkit-tap-highlight-color: transparent;
-        text-decoration: none;
-        color: white;
-        text-align: center;
-        letter-spacing: .5px;
-        transition: .2s ease-out;
-        cursor: pointer;
-        width: 50%;
-        background-color: #ff844b; }
-        main .card.xfer .actions .btn[disabled] {
-          background-color: #bfbfbf; }
-    main .card .transHstry {
-      border: 1px solid #bfbfbf;
-      border-left: none;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: table;
-      width: 100%; }
-      main .card .transHstry .transItem {
-        display: table-row;
-        height: 80px;
-        padding: 17px 0; }
-        main .card .transHstry .transItem:not(:last-child) {
-          border-bottom: 1px solid #bfbfbf; }
-        main .card .transHstry .transItem > span {
-          display: table-cell;
-          vertical-align: middle;
-          border-bottom: 1px solid #bfbfbf; }
-        main .card .transHstry .transItem .mLogo {
-          display: block;
-          height: 45px;
-          width: 45px;
-          margin: 0 17px;
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-clip: padding-box;
-          background-size: contain; }
-        main .card .transHstry .transItem .tDate {
-          padding: .5em 1em;
-          font-size: 14px; }
-        main .card .transHstry .transItem .tDescript {
-          padding: .5em;
-          min-width: 40%; }
-          main .card .transHstry .transItem .tDescript span {
-            display: block; }
-          main .card .transHstry .transItem .tDescript .mName {
-            font-size: 15px;
-            line-height: .9em;
-            font-weight: bold; }
-          main .card .transHstry .transItem .tDescript .tType {
-            font-size: 13px; }
-        main .card .transHstry .transItem .tAmount {
-          padding: .5em;
-          font-size: 16px;
-          font-weight: bold; }
-          main .card .transHstry .transItem .tAmount:before {
-            content: '-$'; }
-        main .card .transHstry .transItem .tCatCode {
-          width: 10px; }
+  background-color: #FFF;
+}
+
+main .container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+main .card {
+  flex: 0 1 auto;
+  min-width: 40%;
+  margin-top: 4em;
+  background-color: #FFF;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 4px -2px rgba(0, 0, 0, 0.2);
+}
+
+main .card .card-header {
+  position: relative;
+  background-color: #0c8397;
+  color: #FFF;
+  height: 80px;
+  font-size: larger;
+  text-align: center;
+  line-height: 80px;
+}
+
+main .card .card-header .icon {
+  position: absolute;
+  height: 24px;
+  width: 28px;
+  color: #add5dc;
+  top: 50%;
+  left: 1em;
+  transform: translateY(-50%);
+  /* note the comps have no transparency */
+}
+
+main .card .card-header .icon.arrows {
+  background-image: url("./assets/icons/arrows.png");
+}
+
+main .card .card-header .icon.briefcase {
+  background-image: url("./assets/icons/briefcase.png");
+}
+
+main .card .card-content {
+  padding: 1.5em 1em;
+}
+
+main .card.xfer .card-content {
+  position: relative;
+}
+
+main .card.xfer .card-content.submit {
+  background-color: gainsboro;
+}
+
+main .card.xfer .card-content.submit button,
+main .card.xfer .card-content.submit input {
+  color: purple;
+}
+
+main .card.xfer .card-content .previewPrompt {
+  position: absolute;
+  color: white;
+  top: .5em;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+main .card.xfer .pbInputBloc {
+  position: relative;
+  margin-top: 1rem;
+  color: #7b7772;
+}
+
+main .card.xfer .pbInputBloc label {
+  display: block;
+  font-weight: bold;
+  color: #373737;
+}
+
+main .card.xfer .pbInputBloc.prefix:after {
+  position: absolute;
+  content: '$';
+  top: 2.2em;
+}
+
+main .card.xfer .pbInputBloc input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #bfbfbf;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  font-size: 16px;
+  margin: 0 0 20px;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  display: block;
+  color: #7b7772;
+}
+
+main .card.xfer .pbInputBloc input[name="amount"] {
+  padding-left: 1em;
+}
+
+main .card.xfer .pbInputBloc input:disabled {
+  color: #7b7772;
+}
+
+main .card.xfer .actions {
+  text-align: center;
+}
+
+main .card.xfer .actions .btn {
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 2rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  letter-spacing: .5px;
+  transition: .2s ease-out;
+  cursor: pointer;
+  width: 50%;
+  background-color: #ff844b;
+}
+
+main .card.xfer .actions .btn[disabled] {
+  background-color: #bfbfbf;
+}
+
+main .card .transHstry {
+  border: 1px solid #bfbfbf;
+  border-left: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: table;
+  width: 100%;
+}
+
+main .card .transHstry .transItem {
+  display: table-row;
+  height: 80px;
+  padding: 17px 0;
+}
+
+main .card .transHstry .transItem:not(:last-child) {
+  border-bottom: 1px solid #bfbfbf;
+}
+
+main .card .transHstry .transItem > span {
+  display: table-cell;
+  vertical-align: middle;
+  border-bottom: 1px solid #bfbfbf;
+}
+
+main .card .transHstry .transItem .mLogo {
+  display: block;
+  height: 45px;
+  width: 45px;
+  margin: 0 17px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-clip: padding-box;
+  background-size: contain;
+}
+
+main .card .transHstry .transItem .tDate {
+  padding: .5em 1em;
+  font-size: 14px;
+}
+
+main .card .transHstry .transItem .tDescript {
+  padding: .5em;
+  min-width: 40%;
+}
+
+main .card .transHstry .transItem .tDescript span {
+  display: block;
+}
+
+main .card .transHstry .transItem .tDescript .mName {
+  font-size: 15px;
+  line-height: .9em;
+  font-weight: bold;
+}
+
+main .card .transHstry .transItem .tDescript .tType {
+  font-size: 13px;
+}
+
+main .card .transHstry .transItem .tAmount {
+  padding: .5em;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+main .card .transHstry .transItem .tAmount:before {
+  content: '-$';
+}
+
+main .card .transHstry .transItem .tCatCode {
+  width: 10px;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 200%;
+  padding: .1em;
+  margin-right: 1em;
+}
+
+.logo > * {
+  display: inline-block;
+
+}
+
+.logo .flipH {
+  transform: scale(-1, 1);
+}
+
+.banner {
+  font-size: 200%;
+  color: rgb(112, 128, 144);
+}

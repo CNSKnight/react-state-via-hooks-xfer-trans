@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    [
+      "@babel/plugin-transform-flow-strip-types",
+      {
+        "all": true,
+        "requireDirective": false
+      }
+    ]
+  ]
+}
